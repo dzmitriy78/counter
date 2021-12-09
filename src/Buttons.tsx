@@ -1,11 +1,21 @@
 import React from "react";
 
-export function Buttons(props: any) {
-        return (
+type PropsType = {
+    count: number
+    maxCount: number
+    onCount: () => void
+    onReset: () => void
+}
 
-        <div>
-            <button disabled={props.count === 5} onClick={()=>props.onCount()}>int</button>
-            <button disabled={props.count===0} onClick={()=>props.onReset()}>reset</button>
+export function Buttons(props: PropsType) {
+    return (
+        <div className={"inc"}>
+            <button disabled={props.count === props.maxCount}
+                    onClick={() => props.onCount()}>int
+            </button>
+            <button disabled={props.count === 0}
+                    onClick={() => props.onReset()}>reset
+            </button>
         </div>
     )
 }
