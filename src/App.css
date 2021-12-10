@@ -9,6 +9,7 @@
     width: 70px;
     height: 50px;
     margin: 0 auto;
+    padding-bottom: 5px;
     border: blue 2px solid;
     border-radius: 10px;
     background-color: #84b078;
@@ -19,7 +20,7 @@
     height: 150px;
     text-align: center;
     background: cornflowerblue;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
     border: blue solid 2px;
     padding: 10px;
@@ -33,10 +34,9 @@
     padding-top: 10px;
     border: blue solid 2px;
     font-size: 30px;
-    background: darkgray;
+    background: rgba(169, 169, 169, 0.65);
     border-radius: 10px;
     margin-top: 10px;
-    position: static;
 }
 
 .inc .btn {
@@ -45,7 +45,7 @@
     height: 50px;
     font-size: 25px;
     margin: 0 auto;
-    background-color: midnightblue;
+    background-color: #4148de;
     color: #ffffff;
     border: white 2px solid;
     border-radius: 50%;

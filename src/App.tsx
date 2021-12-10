@@ -4,7 +4,7 @@ import {Buttons} from "./Buttons";
 
 function App() {
 
-    const maxCount = 5;
+    const maxCount = 10;
     let [count, setCount] = useState(0)
 
     function onCount() {
