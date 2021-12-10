@@ -22,9 +22,10 @@ function App() {
     return (
 
         <div className="App">
-
-            <div className={count === maxCount ? "large" : ""}>
-                {count}
+            <div className={"screen"}>
+                <div className={count === maxCount ? "large" : ""}>
+                    {count}
+                </div>
             </div>
             <div className={"buttons"}>
                 <Buttons onCount={onCount}
