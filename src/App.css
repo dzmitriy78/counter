@@ -1,3 +1,8 @@
+.globalApp {
+    display: inline-flex;
+    margin-left: 350px;
+}
+
 .large {
     font-size: 40px;
     color: red;
@@ -5,6 +10,7 @@
     margin: 0 auto;
     padding-bottom: 5px;
 }
+
 .screen {
     width: 70px;
     height: 50px;
@@ -15,16 +21,15 @@
     background-color: #84b078;
 }
 
-.App {
+.counter {
     width: 200px;
-    height: 150px;
     text-align: center;
     background: cornflowerblue;
     font-size: 40px;
     font-weight: 500;
     border: blue solid 2px;
     padding: 10px;
-    margin: 0 auto;
+    margin-left: 20px;
     border-radius: 10px;
 }
 
@@ -36,7 +41,7 @@
     font-size: 30px;
     background: rgba(169, 169, 169, 0.65);
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .inc .btn {
@@ -49,4 +54,47 @@
     color: #ffffff;
     border: white 2px solid;
     border-radius: 50%;
+}
+
+.customBlock {
+    width: 300px;
+    text-align: left;
+    background: cornflowerblue;
+    font-size: 20px;
+    font-weight: 500;
+    border: blue solid 2px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.customScreen {
+    width: 300px;
+    display: block;
+    padding-bottom: 5px;
+    border: blue 2px solid;
+    border-radius: 10px;
+    background-color: #84b078;
+}
+
+.set .btn {
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    font-size: 25px;
+    margin: 0 auto;
+    background-color: #4148de;
+    color: #ffffff;
+    border: white 2px solid;
+    border-radius: 50%;
+}
+
+.customButtons {
+    width: 80px;
+    height: 60px;
+    padding-top: 10px;
+    margin: 10px auto;
+    border: blue solid 2px;
+    font-size: 30px;
+    background: rgba(169, 169, 169, 0.65);
+    border-radius: 10px;
 }

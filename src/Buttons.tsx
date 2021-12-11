@@ -11,7 +11,7 @@ export function Buttons(props: PropsType) {
     return (
         <div className={"inc"}>
             <button className={"btn"} disabled={props.count === props.maxCount}
-                    onClick={() => props.onCount()}>int
+                    onClick={() => props.onCount()}>inc
             </button>
             <button className={"btn"} disabled={props.count === 0}
                     onClick={() => props.onReset()}>reset
