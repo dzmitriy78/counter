@@ -17,10 +17,12 @@ export const Counter = (props: any) => {
             </div>
             <div className={"buttons"}>
                 <div className={"inc"}>
-                    <button className={"btn"} disabled={props.count === props.maxCount}
+                    <button className={"btn"} style={{opacity: props.disableButton() ? "50%" : ""}}
+                            disabled={props.disableButton()}
                             onClick={onIncHandler}>inc
                     </button>
-                    <button className={"btn"} disabled={props.count === 0}
+                    <button className={"btn"} style={{opacity: props.disableButton() ? "50%" : ""}}
+                            disabled={props.disableButton()}
                             onClick={onResetHandler}>reset
                     </button>
                 </div>

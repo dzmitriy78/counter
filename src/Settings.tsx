@@ -1,39 +1,28 @@
-import {ChangeEvent, useState} from "react";
-
 export const Settings = (props: any) => {
 
-    let [startCount, setStartCount] = useState<number | string>(0)
-    const [maxCount, setMaxValue] = useState<number | string>(0)
-
-    const handlerMaxCountChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setMaxValue(+e.currentTarget.value)
-    }
-    const handlerStartCountChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setStartCount(+e.currentTarget.value)
-    }
-    const setParameters = () => {
-        props.setStartCount(startCount)
-        props.setMaxCount(maxCount)
-    }
+    let style: string;
+    style = props.disableButton() ? "error" : "";
 
     return <>
         <div className="customBlock">
 
             <div className={"customScreen"}>
                 max value:
-                <input type="number" step="1" onChange={handlerMaxCountChange} value={maxCount}/>
+                <input className={style} type="number" step="1" onChange={props.handlerMaxCountChange} value={props.maxCount}/>
             </div>
             <div className={"customScreen"}>
                 start value:
-                <input type="number" step="1" onChange={handlerStartCountChange} value={startCount}/>
+                <input className={style} type="number" step="1" onChange={props.handlerStartCountChange} value={props.startValue}/>
             </div>
             <div className={"customButtons"}>
                 <div className={"set"}>
-                    <button className={"btn"} onClick={setParameters}>set
+                    <button className={"btn"}
+                            style={{opacity: props.disableButton() ? "50%" : ""}}
+                            disabled={props.disableButton()}
+                            onClick={props.setParameters}>set
                     </button>
                 </div>
             </div>
         </div>
-
     </>
 }
