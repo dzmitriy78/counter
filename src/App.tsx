@@ -1,63 +1,43 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './App.css';
-import {Buttons} from "./Buttons";
-import {Customization} from "./Customization";
+import {Settings} from "./Settings";
+import {Counter} from "./Counter";
 
 
 function App() {
 
-    let [count, setCount] = useState(0)
-    const [maxCount, setMaxValue] = useState(1)
+    let [count, setCount] = useState<number | string>("enter values")
+    const [maxCount, setMaxValue] = useState<number | string>(0)
 
+    let startValue: number | string = 0;
 
-    function onCount() {
+    const setStartCount = (startCount: number) => {
+        setCount(startCount)
+        startValue = count;
+    }
+    const setMaxCount = (maxCount: number) => {
+        setMaxValue(maxCount)
+    }
+    function onInc() {
         if (count < maxCount) {
-            count += 1
+            count = +count + 1
         } else return
         setCount(count)
     }
 
     function onReset() {
-        count = 0
-        setCount(count)
+        setCount(startValue)
     }
-
     return (
         <div className={"globalApp"}>
-            <div className="customBlock">
-                <div className={"customScreen"}>
-                    max value:
-                    <input type="number" step="1" onChange={e => {
-                        setMaxValue(+e.currentTarget.value);
-                    }}/>
-                </div>
-                <div className={"customScreen"}>
-                    start value:
-                    <input type="number" step="1" onChange={e => {
-                        setCount(+e.currentTarget.value)
-                    }}/>
-                </div>
-                <div className={"customButtons"}>
-                    <Customization setMaxValue={setMaxValue}
-                                   setCount={setCount}/>
-                </div>
-            </div>
+            <Settings setStartCount={setStartCount}
+                      setMaxCount={setMaxCount}/>
+            <Counter count={count}
+                     maxCount={maxCount}
+                     onInc={onInc}
+                     onReset={onReset}/>
 
-            <div className="counter">
-                <div className={"screen"}>
-                    <div className={count === maxCount ? "large" : ""}>
-                        {count}
-                    </div>
-                </div>
-                <div className={"buttons"}>
-                    <Buttons onCount={onCount}
-                             onReset={onReset}
-                             count={count}
-                             maxCount={maxCount}
-                    />
-                </div>
 
-            </div>
         </div>
     );
 }
