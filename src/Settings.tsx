@@ -1,4 +1,15 @@
-export const Settings = (props: any) => {
+import {ChangeEvent} from "react";
+
+interface PropsSettings {
+    disableButton(): boolean
+    setParameters(): void
+    handlerStartCountChange(e: ChangeEvent<HTMLInputElement>): void
+    handlerMaxCountChange(e: ChangeEvent<HTMLInputElement>): void
+    maxCount: string | number
+    startValue: string | number
+}
+
+export const Settings = (props: PropsSettings) => {
 
     let style: string;
     style = props.disableButton() ? "error" : "";
@@ -8,11 +19,13 @@ export const Settings = (props: any) => {
 
             <div className={"customScreen"}>
                 max value:
-                <input className={style} type="number" step="1" onChange={props.handlerMaxCountChange} value={props.maxCount}/>
+                <input className={style} type="number" step="1" onChange={props.handlerMaxCountChange}
+                       value={props.maxCount}/>
             </div>
             <div className={"customScreen"}>
                 start value:
-                <input className={style} type="number" step="1" onChange={props.handlerStartCountChange} value={props.startValue}/>
+                <input className={style} type="number" step="1" onChange={props.handlerStartCountChange}
+                       value={props.startValue}/>
             </div>
             <div className={"customButtons"}>
                 <div className={"set"}>

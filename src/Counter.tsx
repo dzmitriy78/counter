@@ -1,4 +1,12 @@
-export const Counter = (props: any) => {
+type PropsCounterType = {
+    disableButton: () => boolean
+    count: string | number
+    maxCount: string | number
+    onReset: () => void
+    onInc: () => void
+}
+
+export const Counter = (props: PropsCounterType) => {
 
     const onIncHandler = () => {
         props.onInc()

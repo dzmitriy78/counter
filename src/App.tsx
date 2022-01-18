@@ -21,11 +21,9 @@ function App() {
         }
         setCount("enter values")
     }
-
-
     useEffect(() => {
         errorHandler()
-    },[maxCount, startValue])
+    }, [maxCount, startValue])
 
     function onInc() {
         if (count < maxCount) {
@@ -39,35 +37,27 @@ function App() {
     }
 
     const handlerMaxCountChange = (e: ChangeEvent<HTMLInputElement>) => {
-
         setMaxValue(+e.currentTarget.value)
-
     }
     const handlerStartCountChange = (e: ChangeEvent<HTMLInputElement>) => {
-
         setStartValue(+e.currentTarget.value)
-
     }
-
-
     const setParameters = () => {
         setCount(startValue)
     }
-
     const disableButton = (): boolean => {
         let disable = false
         if (startValue >= maxCount) {
             disable = true
         }
-        if (startValue <0) {
-            disable=true
+        if (startValue < 0) {
+            disable = true
         }
         return disable
     }
-
     return (
         <div className={"globalApp"}>
-            <Settings setParameters = {setParameters}
+            <Settings setParameters={setParameters}
                       handlerMaxCountChange={handlerMaxCountChange}
                       handlerStartCountChange={handlerStartCountChange}
                       startValue={startValue}
