@@ -10,6 +10,23 @@ function App() {
     const [maxCount, setMaxValue] = useState<number | string>(1)
     const [startValue, setStartValue] = useState<number | string>(0)
 
+    useEffect(()=>{
+            let startValueToString = localStorage.getItem("start value")
+            if (startValueToString) {
+                let newStartValue = JSON.parse(startValueToString)
+                setStartValue(newStartValue)
+            }
+        },[]
+    )
+    useEffect(()=>{
+            let maxValueToString = localStorage.getItem("max value")
+            if (maxValueToString) {
+                let newMaxValue = JSON.parse(maxValueToString)
+                setMaxValue(newMaxValue)
+            }
+        },[]
+    )
+
     const errorHandler = () => {
         if (startValue >= maxCount) {
             setCount("incorrect value")
@@ -35,6 +52,15 @@ function App() {
     function onReset() {
         setCount(startValue)
     }
+
+    useEffect(()=> {
+        localStorage.setItem("start value", JSON.stringify(startValue))
+        }, [startValue]
+    )
+    useEffect(()=> {
+        localStorage.setItem("max value", JSON.stringify(maxCount))
+        }, [maxCount]
+    )
 
     const handlerMaxCountChange = (e: ChangeEvent<HTMLInputElement>) => {
         setMaxValue(+e.currentTarget.value)
