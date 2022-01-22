@@ -5,7 +5,7 @@ interface PropsSettings {
     setParameters(): void
     handlerStartCountChange(e: ChangeEvent<HTMLInputElement>): void
     handlerMaxCountChange(e: ChangeEvent<HTMLInputElement>): void
-    maxCount: string | number
+    maxValue: string | number
     startValue: string | number
 }
 
@@ -20,7 +20,7 @@ export const Settings = (props: PropsSettings) => {
             <div className={"customScreen"}>
                 max value:
                 <input className={style} type="number" step="1" onChange={props.handlerMaxCountChange}
-                       value={props.maxCount}/>
+                       value={props.maxValue}/>
             </div>
             <div className={"customScreen"}>
                 start value:

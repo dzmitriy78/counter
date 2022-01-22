@@ -1,7 +1,7 @@
 type PropsCounterType = {
     disableButton: () => boolean
-    count: string | number
-    maxCount: string | number
+    countValue: string | number
+    maxValue: string | number
     onReset: () => void
     onInc: () => void
 }
@@ -19,8 +19,8 @@ export const Counter = (props: PropsCounterType) => {
     return <>
         <div className="counter">
             <div className={"screen"}>
-                <div className={props.count === props.maxCount ? "large" : ""}>
-                    {props.count}
+                <div className={props.countValue === props.maxValue ? "large" : ""}>
+                    {props.countValue}
                 </div>
             </div>
             <div className={"buttons"}>
@@ -29,8 +29,7 @@ export const Counter = (props: PropsCounterType) => {
                             disabled={props.disableButton()}
                             onClick={onIncHandler}>inc
                     </button>
-                    <button className={"btn"} style={{opacity: props.disableButton() ? "50%" : ""}}
-                            disabled={props.disableButton()}
+                    <button className={"btn"}
                             onClick={onResetHandler}>reset
                     </button>
                 </div>
