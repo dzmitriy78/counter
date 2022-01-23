@@ -9,10 +9,16 @@ import {changeMaxValueAC, changeStartValueAC} from "./bll/settings-reducer";
 
 function App() {
 
-    // @ts-ignore
-    let startValue = useSelector<AppStateType, number | string>(state => state.settings.startValue)
-    // @ts-ignore
-    let maxValue = useSelector<AppStateType, number | string>(state => state.settings.maxValue)
+
+    let startValue = useSelector<AppStateType, number | string>(state => {
+        const {startValue: startValue1} = state.settings;
+        return startValue1;
+    })
+
+    let maxValue = useSelector<AppStateType, number | string>(state => {
+        const {maxValue: maxValue1} = state.settings;
+        return maxValue1;
+    })
     // @ts-ignore
     let countValue = useSelector<AppStateType, number | string>(state => state.counter.countValue)
 
