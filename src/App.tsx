@@ -7,7 +7,6 @@ import {AppStateType} from "./bll/store";
 import {errorHandlerAC, incCountValueAC, onResetValueAC, setParametersAC} from "./bll/counter-reducer";
 import {changeMaxValueAC, changeStartValueAC} from "./bll/settings-reducer";
 
-
 function App() {
 
     // @ts-ignore
