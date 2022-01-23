@@ -16,6 +16,7 @@ function App() {
     // @ts-ignore
     let countValue = useSelector<AppStateType, number | string>(state => state.counter.countValue)
 
+
     /*  useEffect(()=>{
               let startValueToString = localStorage.getItem("start value")
               if (startValueToString) {
